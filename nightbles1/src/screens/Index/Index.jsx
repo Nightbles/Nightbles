@@ -1,9 +1,15 @@
 import React from "react";
 import { Search } from "../../components/Search";
 import { UserIcn1 } from "../../icons/UserIcn1";
+//import jsonData from './discoteche.json';
 import "./style.css";
 
 export const Index = () => {
+  
+  let data = require('./discoteche.json');
+  //const data = () => JSON.parse(JSON.stringify(jsonData));
+  //const nomi_discoteche[] = data.
+
   return (
     <div className="index">
       <div className="div">
@@ -74,7 +80,7 @@ export const Index = () => {
         <div className="CARD">
           <div className="overlap-2">
             <img className="unsplash" alt="Unsplash" src="/img/unsplash-y5pxvs1lpy4-5.png" />
-            <div className="text-wrapper-16">Nome locale</div>
+            <div className="text-wrapper-16">{data.discoteche[0].nome}</div>
             <p className="p">
               Lorem ipsum dolor sit amet consectetur. Proin tristique libero tortor tellus pretium magna sollicitudin.
               Diam feugiat sodales velit feugiat eget eros.
