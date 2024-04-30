@@ -6,7 +6,8 @@ export const Homepage = () => {
     console.log(data);
     const discoteche = data.discoteche;
     return(
-        <Card nome = {discoteche[0].nome} descrizione = {discoteche[0].descrizione} />
+        <Card nome = {discoteche[0].nome} descrizione = {discoteche[0].descrizione} prezzo = {discoteche[0].prezzo_medio}/>
+        
     )
-    
+  
 }

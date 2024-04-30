@@ -1,58 +1,25 @@
 {
     "discoteche": [
       {
-        "nome": "Funky Groove",
-        "via": "Via del Ballo, 12",
-        "genere_musicale": "Funky, House",
-        "descrizione": "Funky Groove è una discoteca che offre una selezione musicale eclettica, con DJ residenti e ospiti provenienti da tutto il mondo. Con il suo ambiente vibrante e le luci accattivanti, è il luogo ideale per ballare tutta la notte.",
-        "serate": [
-          {
-            "nome": "Funky Fridays",
-            "data": "Venerdì 20 Aprile 2024",
-            "genere": "Funky"
-          },
-          {
-            "nome": "House Party",
-            "data": "Sabato 21 Aprile 2024",
-            "genere": "House"
-          }
-        ]
+        "nome": "Lime milano",
+        "via": "Via Tullo Massarani, 6",
+        "genere_musicale": "Commerciale",
+        "prezzo_medio": "€€",
+        "descrizione": "Lime Milano è una delle discoteche più grandi e importanti di Milano, l’ideale per eventi aziendali e privati a Milano. Aperto nel weekend come luogo di intrattenimento giovanile e come spazio eventi e concerti medio grandi."       
       },
       {
         "nome": "Electro Beat",
         "via": "Via della Musica, 24",
         "genere_musicale": "Electro, Techno",
-        "descrizione": "Electro Beat è una discoteca rinomata per la sua musica elettronica di alta qualità e per le sue serate tematiche uniche. Situata nel cuore della città, è il punto di riferimento per gli amanti della musica dance.",
-        "serate": [
-          {
-            "nome": "Techno Night",
-            "data": "Giovedì 19 Aprile 2024",
-            "genere": "Techno"
-          },
-          {
-            "nome": "Electro Vibes",
-            "data": "Sabato 21 Aprile 2024",
-            "genere": "Electro"
-          }
-        ]
+        "prezzo_medio": "€€",
+        "descrizione": "Electro Beat è una discoteca rinomata per la sua musica elettronica di alta qualità e per le sue serate tematiche uniche. Situata nel cuore della città, è il punto di riferimento per gli amanti della musica dance."
       },
       {
         "nome": "Soul Vibes",
         "via": "Via del Ritmo, 8",
         "genere_musicale": "Soul, R&B",
-        "descrizione": "Soul Vibes è una discoteca che celebra il meglio della musica soul, funk e R&B. Con la sua atmosfera calda e accogliente, è il posto perfetto per chi desidera ballare al ritmo dei grandi classici e delle ultime hit.",
-        "serate": [
-          {
-            "nome": "Soulful Sundays",
-            "data": "Domenica 22 Aprile 2024",
-            "genere": "Soul"
-          },
-          {
-            "nome": "R&B Night",
-            "data": "Mercoledì 25 Aprile 2024",
-            "genere": "R&B"
-          }
-        ]
+        "prezzo_medio": "€€",
+        "descrizione": "Soul Vibes è una discoteca che celebra il meglio della musica soul, funk e R&B. Con la sua atmosfera calda e accogliente, è il posto perfetto per chi desidera ballare al ritmo dei grandi classici e delle ultime hit."
       }
     ]
   }

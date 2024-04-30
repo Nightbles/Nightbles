@@ -11,7 +11,7 @@ export const Card = (locale) => {
                     <p className="text-wrapper">
                         {locale.descrizione}
                     </p>
-                    <div className="div">€€€</div>
+                    <div className="div">{locale.prezzo}</div>
                 </div>
             </div>
         </div>
