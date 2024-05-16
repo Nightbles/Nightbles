@@ -1,0 +1,346 @@
+.leMiePrenotazioni,
+.prenChild {
+  position: relative;
+  max-width: 100%;
+}
+.prenChild {
+  height: 148px;
+  width: 1920px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+  background-color: var(--color-white);
+  display: none;
+}
+.leMiePrenotazioni {
+  margin: 0;
+  height: 101px;
+  width: 831px;
+  font-size: inherit;
+  font-weight: 600;
+  font-family: inherit;
+  display: inline-block;
+  flex-shrink: 0;
+  z-index: 1;
+}
+.pren {
+  align-self: stretch;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: var(--padding-28xl) var(--padding-464xl) 0;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.div,
+.limeMilano {
+  width: 122px;
+  position: relative;
+  font-weight: 300;
+  display: inline-block;
+}
+.limeMilano {
+  width: 834px;
+  font-weight: 600;
+  flex-shrink: 0;
+  max-width: 100%;
+  cursor: pointer;
+}
+.limeMilanoWrapper,
+.parent {
+  display: flex;
+  align-items: flex-start;
+  max-width: 100%;
+}
+.limeMilanoWrapper {
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 0 0 0 var(--padding-21xl);
+  box-sizing: border-box;
+  font-size: var(--font-size-29xl);
+}
+.parent {
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: var(--gap-6xl);
+}
+.frameChild {
+  width: 494px;
+  position: relative;
+  border-radius: var(--br-mini);
+  max-height: 100%;
+  object-fit: cover;
+  max-width: 100%;
+}
+.rectangleWrapper {
+  width: 570px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-lgi) 0 0;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.tavolo {
+  align-self: stretch;
+  position: relative;
+  font-weight: 600;
+}
+.tavoloWrapper {
+  width: 185px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-12xs) 0 0;
+  box-sizing: border-box;
+}
+.equipe1 {
+  margin: 0;
+}
+.equipe {
+  flex: 1;
+  position: relative;
+  font-size: var(--font-size-26xl);
+  font-weight: 300;
+  display: inline-block;
+  min-width: 135px;
+}
+.frameParent1 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-smi);
+  font-size: var(--font-size-29xl);
+}
+.vokdaAllaFrutta {
+  flex: 1;
+  position: relative;
+  font-weight: 300;
+}
+.vokdaAllaFruttaWrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-28xl) 0 var(--padding-21xl);
+}
+.vokdaAllaFrutta1,
+.vokdaAllaFrutta2 {
+  align-self: stretch;
+  position: relative;
+  font-weight: 300;
+}
+.vokdaAllaFruttaParent {
+  flex: 1;
+  flex-direction: column;
+  gap: var(--gap-base);
+}
+.frameDiv,
+.frameWrapper1,
+.vokdaAllaFruttaParent {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.frameWrapper1 {
+  align-self: stretch;
+  flex-direction: row;
+  padding: 0 var(--padding-28xl) 0 var(--padding-21xl);
+}
+.frameDiv {
+  width: 405px;
+  flex-direction: column;
+  gap: var(--gap-8xl-5);
+  max-width: 100%;
+}
+.bottonePrenotaChild {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-21xl);
+  background-color: var(--color-gray-600);
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.modificaPrenotazione {
+  position: absolute;
+  top: 32.5px;
+  left: 19.7px;
+  font-weight: 500;
+  display: inline-block;
+  width: 468.4px;
+  height: 66.1px;
+  z-index: 1;
+}
+.bottonePrenota {
+  align-self: stretch;
+  height: 131px;
+  position: relative;
+}
+.bottonePrenotaWrapper,
+.frameGroup {
+  display: flex;
+  align-items: flex-start;
+  max-width: 100%;
+}
+.bottonePrenotaWrapper {
+  width: 506.6px;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: var(--padding-74xl) 0 0;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: var(--font-size-21xl);
+  color: var(--color-gray-100);
+}
+.frameGroup {
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: var(--gap-xl);
+}
+.frameContainer {
+  align-self: stretch;
+  flex-direction: row;
+  padding: 0 0 0 var(--padding-xs);
+  box-sizing: border-box;
+  font-size: var(--font-size-17xl);
+}
+.frameContainer,
+.frameParent,
+.frameWrapper,
+.prenParent {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.frameParent {
+  flex: 1;
+  flex-direction: column;
+  gap: var(--gap-smi);
+}
+.frameWrapper,
+.prenParent {
+  box-sizing: border-box;
+}
+.frameWrapper {
+  width: 1761.6px;
+  flex-direction: row;
+  padding: 0 var(--padding-27xl);
+  font-size: var(--font-size-xl);
+}
+.prenParent {
+  align-self: stretch;
+  flex-direction: column;
+  padding: 0 0 var(--padding-101xl-5);
+  gap: var(--gap-71xl);
+  text-align: left;
+  font-size: var(--font-size-56xl);
+  color: var(--color-black);
+  font-family: var(--font-inter);
+}
+@media screen and (max-width: 1625px) {
+  .frameGroup {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 1275px) {
+  .frameWrapper,
+  .pren {
+    padding-left: var(--padding-222xl);
+    padding-right: var(--padding-222xl);
+    box-sizing: border-box;
+  }
+  .frameWrapper {
+    padding-left: var(--padding-4xl);
+    padding-right: var(--padding-4xl);
+  }
+  .prenParent {
+    gap: var(--gap-26xl);
+  }
+}
+@media screen and (max-width: 900px) {
+  .leMiePrenotazioni {
+    font-size: var(--font-size-41xl);
+  }
+  .pren {
+    padding-left: var(--padding-101xl);
+    padding-right: var(--padding-101xl);
+    box-sizing: border-box;
+  }
+  .limeMilano,
+  .tavolo {
+    font-size: var(--font-size-19xl);
+  }
+  .equipe {
+    font-size: var(--font-size-17xl);
+  }
+  .vokdaAllaFrutta,
+  .vokdaAllaFrutta1,
+  .vokdaAllaFrutta2 {
+    font-size: var(--font-size-10xl);
+  }
+  .modificaPrenotazione {
+    font-size: var(--font-size-13xl);
+  }
+  .prenParent {
+    gap: var(--gap-3xl);
+    padding-bottom: var(--padding-59xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 450px) {
+  .leMiePrenotazioni {
+    font-size: var(--font-size-26xl);
+  }
+  .pren {
+    padding-left: var(--padding-xl);
+    padding-right: var(--padding-xl);
+    box-sizing: border-box;
+  }
+  .div {
+    font-size: var(--font-size-base);
+  }
+  .limeMilano,
+  .tavolo {
+    font-size: var(--font-size-10xl);
+  }
+  .equipe {
+    font-size: var(--font-size-8xl);
+  }
+  .frameParent1 {
+    flex-wrap: wrap;
+  }
+  .vokdaAllaFrutta {
+    font-size: var(--font-size-3xl);
+  }
+  .vokdaAllaFruttaWrapper {
+    padding-left: var(--padding-xl);
+    padding-right: var(--padding-xl);
+    box-sizing: border-box;
+  }
+  .vokdaAllaFrutta1,
+  .vokdaAllaFrutta2 {
+    font-size: var(--font-size-3xl);
+  }
+  .frameWrapper1 {
+    padding-left: var(--padding-xl);
+    padding-right: var(--padding-xl);
+    box-sizing: border-box;
+  }
+  .modificaPrenotazione {
+    font-size: var(--font-size-5xl);
+  }
+  .prenParent {
+    padding-bottom: var(--padding-32xl);
+    box-sizing: border-box;
+  }
+}
