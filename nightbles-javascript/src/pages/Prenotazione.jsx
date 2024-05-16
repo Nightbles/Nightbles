@@ -1,6 +1,7 @@
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Prenotazione.module.css";
+import Map from "../components/Map";
 
 const Prenotazione = () => {
   const navigate = useNavigate();
@@ -226,12 +227,7 @@ const Prenotazione = () => {
                 </div>
               </div>
             </div>
-            <img
-              className={styles.databaseInteractorAdvanced}
-              loading="lazy"
-              alt=""
-              src="/frame-21@2x.png"
-            />
+            <Map/>
           </div>
           <div className={styles.networkInterfaceAdvanced}>
             <div className={styles.userInputProcessorAdvanced}>
