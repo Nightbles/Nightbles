@@ -1,8 +1,12 @@
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Locale.module.css";
-
+//"calendario" a scorrimento con le immagini
+//possibilità di cambiare l'immagine del locale
 const Locale = () => {
+  const [ImgGrande, setImgGrande] = useState("/image-11@2x.png");
+  const [immagini, setImmagini] = useState([{id: 0, img: "/image-21@2x.png"},{id: 1,img: "/image-31@2x.png"} , {id: 2 , img:"/image-41@2x.png"} , {id:3, img: "/image-51@2x.png"}]);
+
   const navigate = useNavigate();
 
   const onNNightblesClick = useCallback(() => {
@@ -24,6 +28,10 @@ const Locale = () => {
     navigate("/login-utente");
   }, [navigate]);
 
+  const onLocaleTextClick = useCallback(() => {
+    navigate("/gestore");
+  }, [navigate]);
+
   const onBottonePrenotaContainerClick = useCallback(() => {
     navigate("/prenotaz-locale");
   }, [navigate]);
@@ -32,13 +40,24 @@ const Locale = () => {
     navigate("/");
   }, [navigate]);
 
+  const prova = (event) =>{
+    const id = parseInt(event.target.id);
+    setImmagini((prevImmagini) => {
+      const nuoveImmagini = [...prevImmagini];
+      const temp = ImgGrande;
+      setImgGrande(nuovaImmagini[id].img);
+      nuoveImmagini[id].img = temp;
+      return nuoveImmagini;
+    });
+  }
+
   return (
     <div className={styles.locale}>
       <header className={styles.frameParent}>
         <div className={styles.rett1Parent}>
           <div className={styles.rett1} />
           <div className={styles.ilTuoLocaleWrapper}>
-            <div className={styles.ilTuoLocale}>IL TUO LOCALE</div>
+            <div className={styles.ilTuoLocale} onClick={onLocaleTextClick}>IL TUO LOCALE</div>
           </div>
           <div className={styles.frameChild} />
           <div className={styles.creaAccountWrapper}>
@@ -81,35 +100,24 @@ const Locale = () => {
         <div className={styles.image1Parent}>
           <img
             className={styles.image1Icon}
+            
             loading="lazy"
             alt=""
-            src="/image-11@2x.png"
+            src={ImgGrande}
           />
           <div className={styles.image2Parent}>
-            <img
-              className={styles.image2Icon}
-              loading="lazy"
-              alt=""
-              src="/image-21@2x.png"
-            />
-            <img
-              className={styles.image3Icon}
-              loading="lazy"
-              alt=""
-              src="/image-31@2x.png"
-            />
-            <img
-              className={styles.image4Icon}
-              loading="lazy"
-              alt=""
-              src="/image-41@2x.png"
-            />
-            <img
-              className={styles.image5Icon}
-              loading="lazy"
-              alt=""
-              src="/image-51@2x.png"
-            />
+            {immagini.map((immagine) =>(
+              <img
+                key={immagine.id}
+                id={immagine.id}
+                className={styles.image2Icon}
+                onClick={prova}
+                alt="img locale"
+                loading="lazy"
+                src={immagine.img} 
+              />
+            ))}
+            
           </div>
         </div>
       </section>

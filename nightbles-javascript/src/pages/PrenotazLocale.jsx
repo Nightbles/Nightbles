@@ -1,9 +1,36 @@
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./PrenotazLocale.module.css";
-
+import DropdownList from "../components/DropdownList";
+//menù a tendina per le bottiglie(0,70 - 1,5l ecc.) differenziare le bottiglie tra di loro
 const PrenotazLocale = () => {
+  const [totale, setTotale] = useState(0.00);
+  const [quantita, setQuantita] = useState(0);
+  const [budgetTavolo, setBudgetTavolo] = useState(0);
+  const [spendibile, setSpendibile] = useState(0);
+  const [prezzoBottiglie, setPrezzoBottiglie] = useState(150)
+  const [quantitaBottiglie, setQuantitaBottiglie] = useState({"150" : 0, "300" : 0, "450" : 0})
+  const aggiornaQuantita = (prezzoBottiglia, quantita) => {
+    if(quantita == "piu"){
+      setQuantitaBottiglie(prevState => ({
+        ...prevState,
+        [prezzoBottiglia]: Math.max(0,prevState[prezzoBottiglia] + 1)
+      }));
+    }
+    else if(quantita == "meno"){
+      setQuantitaBottiglie(prevState => ({
+        ...prevState,
+        [prezzoBottiglia]: Math.max(0,prevState[prezzoBottiglia] - 1)
+      }));
+    }
+    
+  };
+  const prezzoBiglietto = 15;
   const navigate = useNavigate();
+
+  const updateStateFromChild = (newValue) => {
+    setPrezzoBottiglie(newValue);
+  };
 
   const onNNightblesClick = useCallback(() => {
     navigate("/");
@@ -11,6 +38,10 @@ const PrenotazLocale = () => {
 
   const onPRENOTATextClick = useCallback(() => {
     navigate("/prenotazione");
+  }, [navigate]);
+
+  const onLocaleTextClick = useCallback(() => {
+    navigate("/gestore");
   }, [navigate]);
 
   const onABOUTUSTextClick = useCallback(() => {
@@ -38,7 +69,7 @@ const PrenotazLocale = () => {
         <div className={styles.outputCollector}>
           <div className={styles.rett1} />
           <div className={styles.logicGate}>
-            <div className={styles.ilTuoLocale}>IL TUO LOCALE</div>
+            <div className={styles.ilTuoLocale} onClick={onLocaleTextClick}>IL TUO LOCALE</div>
           </div>
           <div className={styles.outputCollectorChild} />
           <div className={styles.creaAccountWrapper}>
@@ -134,16 +165,24 @@ const PrenotazLocale = () => {
                       </div>
                       <div className={styles.frameParent3}>
                         <div className={styles.dataAggregatorWrapper}>
-                          <h2 className={styles.dataAggregator}>-</h2>
+                          <button className={styles.dataAggregator} 
+                              onClick={() => {
+                                setTotale(totale => Math.max(0, totale - prezzoBiglietto))
+                                setQuantita(quantita => Math.max(0, quantita - 1))
+                          }}>-</button>
                         </div>
                         <div className={styles.conditionalSplitter}>
                           <div className={styles.quantit}>Quantità</div>
                           <div className={styles.valueFilter}>
                             <div className={styles.inputMerger}>
                               <div className={styles.outputSorter}>
-                                <div className={styles.errorHandler}>0</div>
+                                <div className={styles.errorHandler}>{quantita}</div>
                               </div>
-                              <h2 className={styles.dataTransformer}>+</h2>
+                              <button className={styles.dataTransformer} 
+                                      onClick={()=> {
+                                        setTotale(totale + prezzoBiglietto)
+                                        setQuantita(quantita + 1)
+                              }}> + </button>
                             </div>
                           </div>
                         </div>
@@ -154,7 +193,7 @@ const PrenotazLocale = () => {
                     <div className={styles.dataSplitter}>
                       <div className={styles.totale}>Totale</div>
                       <div className={styles.modelTrainer}>
-                        <div className={styles.div1}>€0</div>
+                        <div className={styles.div1}>{totale}€</div>
                       </div>
                     </div>
                   </div>
@@ -199,9 +238,17 @@ const PrenotazLocale = () => {
                       <div className={styles.tavoloBase}>Tavolo base</div>
                     </div>
                     <div className={styles.edgeDetectorParent}>
-                      <h2 className={styles.edgeDetector}>-</h2>
-                      <div className={styles.div2}>€200</div>
-                      <h2 className={styles.edgeDetector1}>+</h2>
+                      <button className={styles.edgeDetector} 
+                              onClick={() => {
+                                setBudgetTavolo(budgetTavolo => Math.max(0, budgetTavolo - 50))
+                                setSpendibile(spendibile => Math.max(0, spendibile - 50))
+                          }}>-</button>
+                      <div className={styles.div2}>{budgetTavolo}€</div>
+                      <button className={styles.edgeDetector1} 
+                                      onClick={()=> {
+                                        setBudgetTavolo(budgetTavolo + 50)
+                                        setSpendibile(spendibile + 50)
+                              }}> + </button>
                     </div>
                   </div>
                 </div>
@@ -215,7 +262,7 @@ const PrenotazLocale = () => {
                 <div className={styles.closing}>
                   <div className={styles.spendibile}>Spendibile:</div>
                   <div className={styles.borderFollowing}>
-                    <div className={styles.div3}>€200</div>
+                    <div className={styles.div3}>{spendibile}€</div>
                   </div>
                 </div>
               </div>
@@ -224,28 +271,52 @@ const PrenotazLocale = () => {
           <div className={styles.regionGrowing}>
             <div className={styles.watershedTransform}>
               <div className={styles.watershedSeedFill}>
-                <div className={styles.vodkaFrutta}>Vodka Frutta</div>
+                <div className={styles.vodkaFrutta}>Vodka Frutta 
+                    <DropdownList 
+                      misura={[0.5,0.75,1]} 
+                      prezzi={[150, 300, 450]}
+                      updateParentState={updateStateFromChild}/>
+                </div>
                 <div className={styles.vodkaFrutta1}>Vodka Frutta</div>
                 <div className={styles.vodkaFrutta2}>Vodka Frutta</div>
                 <div className={styles.vodkaFrutta3}>Vodka Frutta</div>
                 <div className={styles.vodkaFrutta4}>Vodka Frutta</div>
-              </div>
+              </div> 
             </div>
             <div className={styles.distanceMap}>
               <div className={styles.reachabilityGraph}>
                 <div className={styles.frameParent4}>
                   <div className={styles.parent}>
-                    <div className={styles.div4}>150€</div>
+                    <div className={styles.div4}>{prezzoBottiglie}€</div>
                     <div className={styles.imageResizerWrapper}>
                       <div className={styles.imageResizer}>
                         <div className={styles.numberFormatter}>
-                          <div className={styles.meno}>
-                            <div className={styles.menoChild} />
-                          </div>
+                            <button className={styles.meno} 
+                              onClick={() => {
+                                
+                                console.log("meno")
+                                if(quantitaBottiglie[prezzoBottiglie] > 0){
+                                  aggiornaQuantita(prezzoBottiglie, "meno")
+                                  console.log(parseInt(spendibile,10) + parseInt(prezzoBottiglie,10))
+                                  setSpendibile(spendibile => Math.max(0, parseInt(spendibile,10) + parseInt(prezzoBottiglie,10)))
+                                }
+                                
+                          }}></button>
                         </div>
-                        <b className={styles.treeStructurer}>0</b>
+                        <b className={styles.treeStructurer}>{quantitaBottiglie[prezzoBottiglie]}</b>
                         <div className={styles.linkConnector}>
                           <div className={styles.piu}>
+                          <button className={styles.piu}
+                              onClick={() => {
+                                if(150 > spendibile){
+                                  alert("budget insufficiente");
+                                }
+                                else{
+                                  aggiornaQuantita(prezzoBottiglie, "piu")
+                                  setSpendibile(spendibile => Math.max(0, spendibile - prezzoBottiglie))
+                                  console.log("prezzoBottiglie: " + typeof(prezzoBottiglie));
+                                } 
+                          }}></button>
                             <div className={styles.errorHandler1} />
                             <div className={styles.responseSender} />
                           </div>

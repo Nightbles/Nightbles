@@ -35,6 +35,14 @@ const Index1 = () => {
     navigate("/");
   }, [navigate]);
 
+  const onLocaleTextClick = useCallback(() => {
+    navigate("/gestore");
+  }, [navigate]);
+
+  const onCreaAccount = useCallback(() => {
+    navigate("/profilo-utente");
+  }, [navigate]);
+
   const onPrivacyPolicyTextClick = useCallback(() => {
     // Please sync "Privacy_policy" to the project
   }, []);
@@ -45,11 +53,11 @@ const Index1 = () => {
         <div className={styles.searchBar}>
           <div className={styles.rett1} />
           <div className={styles.callToAction}>
-            <div className={styles.ilTuoLocale}>IL TUO LOCALE</div>
+            <div className={styles.ilTuoLocale} onClick={onLocaleTextClick}>IL TUO LOCALE</div>
           </div>
           <div className={styles.unsplashCard} />
           <div className={styles.creaAccountWrapper}>
-            <div className={styles.creaAccount}>CREA ACCOUNT</div>
+            <div className={styles.creaAccount} onClick={onCreaAccount}>CREA ACCOUNT</div>
           </div>
         </div>
         <div className={styles.destinationSelector}>

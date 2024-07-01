@@ -8,9 +8,10 @@ const Gestore = () => {
   const onNNightblesClick = useCallback(() => {
     navigate("/");
   }, [navigate]);
+  
 
   const onPRENOTATextClick = useCallback(() => {
-    navigate("/gestore");
+    navigate("/prenotazione");
   }, [navigate]);
 
   const onABOUTUSTextClick = useCallback(() => {

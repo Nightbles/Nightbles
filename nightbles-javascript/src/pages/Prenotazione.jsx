@@ -1,10 +1,22 @@
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import CustomSlider from "../components/CustomSlider";
 import styles from "./Prenotazione.module.css";
 import Map from "../components/Map";
 
+
+
 const Prenotazione = () => {
+  //const minLista = 0;
+
+  //const maxLista = 70;
+  //const [lista, setLista] = useState([minLista, maxLista]);
+
   const navigate = useNavigate();
+  
+  const onNNightbles1Click = useCallback(() => {
+    navigate("/");
+  }, [navigate]);
 
   const onNNightblesClick = useCallback(() => {
     navigate("/");
@@ -12,6 +24,10 @@ const Prenotazione = () => {
 
   const onPRENOTATextClick = useCallback(() => {
     navigate("/prenotazione");
+  }, [navigate]);
+
+  const onLocaleTextClick = useCallback(() => {
+    navigate("/gestore");
   }, [navigate]);
 
   const onABOUTUSTextClick = useCallback(() => {
@@ -29,8 +45,8 @@ const Prenotazione = () => {
     navigate("/locale");
   }, [navigate]);
 
-  const onNNightbles1Click = useCallback(() => {
-    navigate("/");
+  const onCreaAccount = useCallback(() => {
+    navigate("/profilo-utente");
   }, [navigate]);
 
   const onPrivacyPolicyTextClick = useCallback(() => {
@@ -39,15 +55,16 @@ const Prenotazione = () => {
 
   return (
     <div className={styles.prenotazione}>
+      
       <header className={styles.featureExtractor}>
         <div className={styles.algorithmManager}>
           <div className={styles.rett1} />
           <div className={styles.treeStructure}>
-            <div className={styles.ilTuoLocale}>IL TUO LOCALE</div>
+            <div className={styles.ilTuoLocale} onClick={onLocaleTextClick}>IL TUO LOCALE</div>
           </div>
           <div className={styles.inputProcessor} />
           <div className={styles.outputAggregator}>
-            <div className={styles.creaAccount}>CREA ACCOUNT</div>
+            <div className={styles.creaAccount} onClick={onCreaAccount}>CREA ACCOUNT</div>
           </div>
         </div>
         <div className={styles.splitter}>
@@ -126,30 +143,20 @@ const Prenotazione = () => {
                       src="/line-8.svg"
                     />
                   </div>
+                  
                   <div className={styles.filtriInner}>
+                  
                     <div className={styles.frameDiv}>
                       <div className={styles.frameParent1}>
                         <div className={styles.budgetListaParent}>
                           <h1 className={styles.budgetLista}>Budget lista:</h1>
                           <div className={styles.free40Wrapper}>
-                            <div className={styles.free40}>FREE - €40</div>
+                            <div className={styles.free40}>free - €70+</div>
                           </div>
-                        </div>
-                        <div className={styles.dataProcessorParent}>
-                          <div className={styles.dataProcessor}>
-                            <div className={styles.inputAggregator} />
-                            <div className={styles.inputAggregator1} />
-                          </div>
-                          <div className={styles.outputFilter}>
-                            <div className={styles.logicTree}>
-                              <div className={styles.valueTransformer}>
-                                <div className={styles.div}>€0</div>
-                              </div>
-                              <div className={styles.div1}>€70+</div>
-                            </div>
-                          </div>
+                          <CustomSlider minPrezzo={0} maxPrezzo={70}/>
                         </div>
                       </div>
+                      
                       <div className={styles.modelTrainer}>
                         <div className={styles.predictionEngine}>
                           <div className={styles.budgetTavoloaPersonaContainer}>
@@ -158,29 +165,13 @@ const Prenotazione = () => {
                             <span>:</span>
                           </div>
                           <div className={styles.dataSerializer}>
-                            <div className={styles.div2}>€20 - €70</div>
+                            <div className={styles.div2}>€20 - €100+</div>
                           </div>
-                        </div>
-                        <div className={styles.networkInterface}>
-                          <div className={styles.userInputProcessor}>
-                            <div className={styles.outputDisplay} />
-                            <div className={styles.outputDisplay1} />
-                          </div>
-                          <div className={styles.eventDispatcher}>
-                            <div className={styles.workflowController}>
-                              <div className={styles.dataFlowManager}>
-                                <div className={styles.div3}>€20</div>
-                                <div className={styles.div4}>€20</div>
-                              </div>
-                              <div className={styles.div5}>€100+</div>
-                            </div>
-                          </div>
+                          <CustomSlider minPrezzo={20} maxPrezzo={100}/>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div className={styles.filtriItem} />
-                  <div className={styles.rectangleDiv} />
                   <div className={styles.ruleExecutor}>
                     <img
                       className={styles.ruleExecutorChild}
