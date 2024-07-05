@@ -1,12 +1,17 @@
 import { useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import React, { Suspense, lazy } from "react";
 import CustomSlider from "../components/CustomSlider";
 import styles from "./Prenotazione.module.css";
+import {discoteche} from "../../public/prova.json"
 import Map from "../components/Map";
 
 
 
 const Prenotazione = () => {
+
+  console.log(discoteche[0].id);
   //const minLista = 0;
 
   //const maxLista = 70;
@@ -41,9 +46,11 @@ const Prenotazione = () => {
     navigate("/login-utente");
   }, [navigate]);
 
-  const onCARDContainerClick = useCallback(() => {
-    navigate("/locale");
-  }, [navigate]);
+  /*const onCARDContainerClick = useCallback((props) => {
+    console.log(props)
+    navigate(`/locale/${props}`);
+  }, [navigate]);*/
+  
 
   const onCreaAccount = useCallback(() => {
     navigate("/profilo-utente");
@@ -223,7 +230,7 @@ const Prenotazione = () => {
           <div className={styles.networkInterfaceAdvanced}>
             <div className={styles.userInputProcessorAdvanced}>
               <div className={styles.outputDisplayAdvanced}>
-                <div className={styles.card} onClick={onCARDContainerClick}>
+                <Link to={`/locale/${discoteche[0].id}`} className={styles.card} >
                   <div className={styles.cardChild} />
                   <img
                     className={styles.unsplashy5pxvs1lpy4Icon}
@@ -233,7 +240,7 @@ const Prenotazione = () => {
                   />
                   <div className={styles.dataFlowManagerAdvanced}>
                     <div className={styles.dataValidationAdvanced}>
-                      <div className={styles.nomeLocale}>Nome locale</div>
+                      <div className={styles.nomeLocale}>{discoteche[0].nome}</div>
                       <div className={styles.loremIpsumDolor}>
                         Lorem ipsum dolor sit amet consectetur. Proin tristique
                         libero tortor tellus pretium magna sollicitudin. Diam
@@ -244,30 +251,31 @@ const Prenotazione = () => {
                       <div className={styles.div7}>€€€</div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
               <div className={styles.outputDisplayAdvanced1}>
-                <div className={styles.card1}>
-                  <div className={styles.cardItem} />
+              <Link to={`/locale/${discoteche[1].id}`} className={styles.card} >
+                  <div className={styles.cardChild} />
                   <img
-                    className={styles.unsplashy5pxvs1lpy4Icon1}
+                    className={styles.unsplashy5pxvs1lpy4Icon}
+                    loading="lazy"
                     alt=""
                     src="/unsplashy5pxvs1lpy41@2x.png"
                   />
-                  <div className={styles.frameParent2}>
-                    <div className={styles.nomeLocaleParent}>
-                      <div className={styles.nomeLocale1}>Nome locale</div>
-                      <div className={styles.loremIpsumDolor1}>
+                  <div className={styles.dataFlowManagerAdvanced}>
+                    <div className={styles.dataValidationAdvanced}>
+                      <div className={styles.nomeLocale}>{discoteche[1].nome}</div>
+                      <div className={styles.loremIpsumDolor}>
                         Lorem ipsum dolor sit amet consectetur. Proin tristique
                         libero tortor tellus pretium magna sollicitudin. Diam
                         feugiat sodales velit feugiat eget eros.
                       </div>
                     </div>
-                    <div className={styles.wrapper}>
-                      <div className={styles.div8}>€€€</div>
+                    <div className={styles.dataParserAdvanced}>
+                      <div className={styles.div7}>€€€</div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
               <div className={styles.predictionEngineExpert}>
                 <div className={styles.card2}>

@@ -1,12 +1,20 @@
 import { useCallback, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams, Link} from "react-router-dom";
+import {discoteche} from "../../public/prova.json"
 import styles from "./Locale.module.css";
 //"calendario" a scorrimento con le immagini
-//possibilità di cambiare l'immagine del locale
 const Locale = () => {
   const [ImgGrande, setImgGrande] = useState("/image-11@2x.png");
   const [immagini, setImmagini] = useState([{id: 0, img: "/image-21@2x.png"},{id: 1,img: "/image-31@2x.png"} , {id: 2 , img:"/image-41@2x.png"} , {id:3, img: "/image-51@2x.png"}]);
 
+  const {urlId} = useParams();
+
+  console.log(urlId);
+
+  const discoteca = discoteche[urlId];
+
+  console.log("discoteca: " + discoteca);
+  
   const navigate = useNavigate();
 
   const onNNightblesClick = useCallback(() => {
@@ -45,7 +53,7 @@ const Locale = () => {
     setImmagini((prevImmagini) => {
       const nuoveImmagini = [...prevImmagini];
       const temp = ImgGrande;
-      setImgGrande(nuovaImmagini[id].img);
+      setImgGrande(nuoveImmagini[id].img);
       nuoveImmagini[id].img = temp;
       return nuoveImmagini;
     });
@@ -338,24 +346,34 @@ const Locale = () => {
           <h1 className={styles.prossimiEventi}>Prossimi eventi:</h1>
           <div className={styles.frameWrapper5}>
             <div className={styles.rectangleGroup}>
-              <img
-                className={styles.rectangleIcon}
-                loading="lazy"
-                alt=""
-                src="/rectangle-37@2x.png"
-              />
-              <img
-                className={styles.frameChild19}
-                loading="lazy"
-                alt=""
-                src="/rectangle-39@2x.png"
-              />
-              <img
-                className={styles.frameChild20}
-                loading="lazy"
-                alt=""
-                src="/rectangle-38@2x.png"
-              />
+              <Link to={`/prenotaz-locale/${discoteca.id}+${discoteca.eventi[0].id}`}>
+                <img
+                  className={styles.rectangleIcon}
+                  loading="lazy"
+                  alt=""
+                  src={discoteca.eventi[0].immagine}
+                />
+              </Link>
+                
+
+              <Link to={`/prenotaz-locale/${discoteca.id}+${discoteca.eventi[1].id}`}>
+                <img
+                  className={styles.frameChild19}
+                  loading="lazy"
+                  alt=""
+                  src={discoteca.eventi[1].immagine}
+                />
+              </Link>
+
+              <Link>
+                <img
+                  className={styles.frameChild20}
+                  loading="lazy"
+                  alt=""
+                  src="/rectangle-38@2x.png"
+                />
+              </Link>
+              
             </div>
           </div>
         </div>

@@ -1,7 +1,8 @@
-import { useCallback, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useCallback, useState, useEffect} from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import styles from "./PrenotazLocale.module.css";
 import DropdownList from "../components/DropdownList";
+import {discoteche} from "../../public/prova.json"
 //menù a tendina per le bottiglie(0,70 - 1,5l ecc.) differenziare le bottiglie tra di loro
 const PrenotazLocale = () => {
   const [totale, setTotale] = useState(0.00);
@@ -10,6 +11,49 @@ const PrenotazLocale = () => {
   const [spendibile, setSpendibile] = useState(0);
   const [prezzoBottiglie, setPrezzoBottiglie] = useState(150)
   const [quantitaBottiglie, setQuantitaBottiglie] = useState({"150" : 0, "300" : 0, "450" : 0})
+
+  
+
+  
+
+  
+
+  
+
+  /*const [productData, setProductData] = useState(null);
+
+  useEffect(() => {
+    fetch('../prova.json') // Sostituisci con l'endpoint effettivo
+      .then(response => response.json())
+      .then(data => setProductData(data))
+      .catch(error => console.error('Errore durante il recupero dei dati:', error));
+  }, []);*/
+  //let evento = [];
+
+  /*function splittingEvento(){
+    let {urlId} = useParams();
+    let urlSplitted = urlId.split("+");
+
+    let key = urlSplitted[0]
+
+    let keyEvento = urlSplitted[1]; 
+
+    return data[key].eventi[keyEvento];
+  }*/
+    let {urlId} = useParams();
+    let urlSplitted = urlId.split("+");
+
+    let key = parseInt(urlSplitted[0])
+    let keyEvento = urlSplitted[1]; 
+
+    
+    console.log(discoteche[key])
+
+
+  const evento =  discoteche[key].eventi[keyEvento];
+
+  console.log(evento)
+
   const aggiornaQuantita = (prezzoBottiglia, quantita) => {
     if(quantita == "piu"){
       setQuantitaBottiglie(prevState => ({
@@ -25,7 +69,7 @@ const PrenotazLocale = () => {
     }
     
   };
-  const prezzoBiglietto = 15;
+  const prezzoBiglietto = evento.prezzoIngresso;
   const navigate = useNavigate();
 
   const updateStateFromChild = (newValue) => {
@@ -112,14 +156,14 @@ const PrenotazLocale = () => {
           <div className={styles.testerInner}>
             <div className={styles.frameParent}>
               <div className={styles.mercoled27MarzoWrapper}>
-                <h2 className={styles.mercoled27Marzo}>Mercoledì 27 marzo</h2>
+                <h2 className={styles.mercoled27Marzo}>Mercoledì {evento.giorno} {evento.mese}</h2>
               </div>
               <div className={styles.rectangleParent}>
                 <img
                   className={styles.frameChild}
                   loading="lazy"
                   alt=""
-                  src="/rectangle-371@2x.png"
+                  src={evento.immagine}
                 />
                 <div className={styles.frameGroup}>
                   <div className={styles.frameWrapper}>
@@ -160,7 +204,7 @@ const PrenotazLocale = () => {
                       <div className={styles.prezzoParent}>
                         <div className={styles.prezzo}>Prezzo</div>
                         <div className={styles.wrapper}>
-                          <div className={styles.div}>15,00€</div>
+                          <div className={styles.div}>{prezzoBiglietto}€</div>
                         </div>
                       </div>
                       <div className={styles.frameParent3}>
@@ -280,6 +324,7 @@ const PrenotazLocale = () => {
                 <div className={styles.vodkaFrutta1}>Vodka Frutta</div>
                 <div className={styles.vodkaFrutta2}>Vodka Frutta</div>
                 <div className={styles.vodkaFrutta3}>Vodka Frutta</div>
+                <div className={styles.vodkaFrutta4}>Vodka Frutta</div>
                 <div className={styles.vodkaFrutta4}>Vodka Frutta</div>
               </div> 
             </div>

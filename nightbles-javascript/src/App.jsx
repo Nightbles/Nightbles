@@ -64,11 +64,11 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/locale":
+      case "/locale/:urlId":
         title = "";
         metaDescription = "";
         break;
-      case "/prenotaz-locale":
+      case "/prenotaz-locale/:urlId":
         title = "";
         metaDescription = "";
         break;
@@ -101,8 +101,8 @@ function App() {
       />
       <Route path="/prenotazione" element={<Prenotazione />} />
       <Route path="/gestore" element={<Gestore />} />
-      <Route path="/locale" element={<Locale />} />
-      <Route path="/prenotaz-locale" element={<PrenotazLocale />} />
+      <Route path="/locale/:urlId" element={<Locale />} />
+      <Route path="/prenotaz-locale/:urlId" element={<PrenotazLocale />} />
     </Routes>
   );
 }

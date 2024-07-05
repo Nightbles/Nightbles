@@ -1,0 +1,29 @@
+{
+    "discoteche" : [
+        {
+            "id": 0,
+            "nome": "lime",
+            "eventi" : [
+                {"id": 0, "nome" : "lime12042024", "prezzoIngresso" : 17.00, "giorno" : 12, "mese" : "luglio", "anno" : 2024, "immagine" : "/rectangle-37@2x.png"},
+                {"id": 1, "nome" : "lime27032024", "prezzoIngresso" : 17.50 , "giorno" : 27, "mese" : "luglio", "anno" : 2024, "immagine" : "/rectangle-39@2x.png" }
+            ],
+            "bottiglie":[
+                {"id": 0, "nome": "Spumante Mood", "quantita": "0.75", "prezzo" : 90},
+                {"id": 1, "nome": "Spumante Mood Luminose", "quantita": "0.75", "prezzo" : 120},
+                {"id": 2, "nome": "Chandon", "quantita": "0.75", "prezzo" : 120},
+                {"id": 3, "nome": "Vodka Au", "quantita": [0.70, 1.5, 3], "prezzo" : [200,450,800], "piuQuantita" : true}
+            ]
+            
+        },
+        {
+            "id": 1,
+            "nome": "alcatraz",
+            "eventi" : [
+                {"id": 0, "nome" : "alcatraz214524", "prezzoIngresso" : 18.50, "giorno" : 6, "mese" : "agosto", "anno" : 2024, "immagine" : "/event1-alcatraz.jpg"},
+                {"id": 1, "nome" : "alcatraz338924", "prezzoIngresso" : 15.50,"giorno" : 24, "mese" : "agosto", "anno" : 2024, "immagine" : "/event2-alcatraz.jpeg" }
+            ]
+            
+            
+        }
+    ]
+}
