@@ -1,0 +1,764 @@
+.span {
+  font-family: var(--font-keania-one);
+}
+.span1 {
+  font-family: var(--font-inknut-antiqua);
+}
+.nightbles {
+  font-family: var(--font-gruppo);
+}
+.nNightblesContainer,
+.registraIlTuo {
+  margin: 0;
+  position: relative;
+  font-family: inherit;
+  display: inline-block;
+}
+.nNightblesContainer {
+  width: 234px;
+  height: 62px;
+  font-size: inherit;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.registraIlTuo {
+  width: 616.9px;
+  font-size: var(--font-size-11xl);
+  font-weight: 500;
+  max-width: 100%;
+}
+.inserisciIlNome {
+  align-self: stretch;
+  position: relative;
+}
+.frameChild {
+  height: 80.4px;
+  width: 317.4px;
+  position: relative;
+  border-radius: var(--br-4xs);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-darkgray-100);
+  box-sizing: border-box;
+  display: none;
+}
+.inserisciNomeLocale {
+  height: 29.6px;
+  flex: 1;
+  position: relative;
+  font-weight: 300;
+  display: inline-block;
+  z-index: 1;
+}
+.inserisciIlNomeDelLocaleParent,
+.rectangleParent {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.rectangleParent {
+  align-self: stretch;
+  border-radius: var(--br-4xs);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-darkgray-100);
+  flex-direction: row;
+  padding: var(--padding-5xl) var(--padding-11xs-4);
+  white-space: nowrap;
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-200);
+}
+.inserisciIlNomeDelLocaleParent {
+  flex: 1;
+  flex-direction: column;
+  gap: var(--gap-mini-5);
+  min-width: 206px;
+}
+.inserisciLindirizzo {
+  align-self: stretch;
+  position: relative;
+}
+.frameItem {
+  height: 80.4px;
+  width: 317.4px;
+  position: relative;
+  border-radius: var(--br-4xs);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-darkgray-100);
+  box-sizing: border-box;
+  display: none;
+}
+.indirizzoLocale {
+  height: 29.6px;
+  flex: 1;
+  position: relative;
+  font-weight: 300;
+  display: inline-block;
+  z-index: 1;
+}
+.rectangleGroup {
+  align-self: stretch;
+  border-radius: var(--br-4xs);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-darkgray-100);
+  flex-direction: row;
+  padding: var(--padding-5xl) var(--padding-11xs-4);
+  white-space: nowrap;
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-200);
+}
+.frameGroup,
+.inserisciLindirizzoParent,
+.rectangleGroup {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.inserisciLindirizzoParent {
+  flex: 1;
+  flex-direction: column;
+  gap: var(--gap-mini-5);
+  min-width: 206px;
+}
+.frameGroup {
+  align-self: stretch;
+  flex-direction: row;
+  gap: var(--gap-2xl-2);
+}
+.nome {
+  align-self: stretch;
+  position: relative;
+}
+.frameInner {
+  height: 80.4px;
+  width: 317.4px;
+  position: relative;
+  border-radius: var(--br-4xs);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-darkgray-100);
+  box-sizing: border-box;
+  display: none;
+}
+.inserisciNome {
+  height: 29.6px;
+  flex: 1;
+  position: relative;
+  font-weight: 300;
+  display: inline-block;
+  z-index: 1;
+}
+.nomeParent,
+.rectangleContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.rectangleContainer {
+  align-self: stretch;
+  border-radius: var(--br-4xs);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-darkgray-100);
+  flex-direction: row;
+  padding: var(--padding-5xl) var(--padding-11xs-4);
+  white-space: nowrap;
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-200);
+}
+.nomeParent {
+  flex: 1;
+  flex-direction: column;
+  gap: var(--gap-mini-5);
+  min-width: 206px;
+}
+.cognome {
+  align-self: stretch;
+  position: relative;
+}
+.rectangleDiv {
+  height: 80.4px;
+  width: 317.4px;
+  position: relative;
+  border-radius: var(--br-4xs);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-darkgray-100);
+  box-sizing: border-box;
+  display: none;
+}
+.inserisciCognome {
+  height: 29.6px;
+  flex: 1;
+  position: relative;
+  font-weight: 300;
+  display: inline-block;
+  z-index: 1;
+}
+.frameDiv {
+  align-self: stretch;
+  border-radius: var(--br-4xs);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-darkgray-100);
+  flex-direction: row;
+  padding: var(--padding-5xl) var(--padding-11xs-4);
+  white-space: nowrap;
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-200);
+}
+.cognomeParent,
+.frameContainer,
+.frameDiv {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.cognomeParent {
+  flex: 1;
+  flex-direction: column;
+  gap: var(--gap-mini-5);
+  min-width: 206px;
+}
+.frameContainer {
+  align-self: stretch;
+  flex-direction: row;
+  gap: var(--gap-2xl-2);
+}
+.email {
+  align-self: stretch;
+  position: relative;
+}
+.frameChild1,
+.inserisciEmail {
+  position: relative;
+  max-width: 100%;
+}
+.frameChild1 {
+  height: 79.9px;
+  width: 655.6px;
+  border-radius: var(--br-4xs);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-darkgray-100);
+  box-sizing: border-box;
+  display: none;
+}
+.inserisciEmail {
+  height: 30px;
+  flex: 1;
+  font-weight: 300;
+  display: inline-block;
+  z-index: 1;
+}
+.emailParent,
+.rectangleParent1 {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.rectangleParent1 {
+  border-radius: var(--br-4xs);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-darkgray-100);
+  box-sizing: border-box;
+  flex-direction: row;
+  padding: var(--padding-4xl) 0 var(--padding-4xl) var(--padding-10xs-5);
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-200);
+}
+.emailParent {
+  flex-direction: column;
+  gap: var(--gap-mini);
+}
+.numeroDiTelefono {
+  flex: 1;
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+}
+.numeroDiTelefonoWrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 var(--padding-11xs-3) 0 var(--padding-11xs);
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.frameChild2 {
+  height: 79.9px;
+  width: 233.5px;
+  position: relative;
+  border-radius: var(--br-4xs);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-darkgray-100);
+  box-sizing: border-box;
+  display: none;
+}
+.doubleDownIcon,
+.it39 {
+  position: relative;
+  z-index: 1;
+}
+.it39 {
+  width: 102px;
+  font-size: var(--font-size-sm);
+  font-weight: 300;
+  font-family: var(--font-poppins);
+  color: var(--color-gray-200);
+  text-align: center;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.doubleDownIcon {
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+}
+.doubleDownLabel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-11xs-3) 0 0;
+}
+.frameButton,
+.frameChild3 {
+  border-radius: var(--br-4xs);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-darkgray-100);
+  box-sizing: border-box;
+}
+.frameButton {
+  cursor: pointer;
+  padding: var(--padding-8xl) var(--padding-26xl) var(--padding-9xl);
+  width: 233.5px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.4px;
+}
+.frameChild3 {
+  height: 79.9px;
+  width: 405.8px;
+  position: relative;
+  display: none;
+  max-width: 100%;
+}
+.inserisciNumeroTelefonico {
+  height: 30px;
+  flex: 1;
+  position: relative;
+  font-weight: 300;
+  display: inline-block;
+  max-width: 100%;
+  z-index: 1;
+}
+.rectangleParent2 {
+  flex: 1;
+  border-radius: var(--br-4xs);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-darkgray-100);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-4xl) 1.5px;
+  min-width: 264px;
+  white-space: nowrap;
+  max-width: 100%;
+}
+.frameParent,
+.frameParent1,
+.frameParent2 {
+  align-self: stretch;
+  display: flex;
+  max-width: 100%;
+}
+.frameParent2 {
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 16.3px;
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-200);
+}
+.frameParent,
+.frameParent1 {
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: var(--gap-mini);
+}
+.frameParent {
+  align-items: flex-start;
+  padding: 0 0 var(--padding-3xs);
+  box-sizing: border-box;
+  gap: var(--gap-2xl-2);
+  text-align: center;
+}
+.frameChild4,
+.r {
+  position: relative;
+}
+.frameChild4 {
+  height: 78.1px;
+  width: 655.6px;
+  box-shadow: 0 4px 26px rgba(0, 0, 0, 0.25);
+  border-radius: var(--br-13xl);
+  background-color: var(--color-darkviolet-200);
+  display: none;
+  max-width: 100%;
+}
+.r {
+  height: 38.7px;
+  width: 263.5px;
+  font-size: var(--font-size-mid);
+  font-weight: 500;
+  font-family: var(--font-poppins);
+  color: var(--color-white);
+  text-align: center;
+  display: inline-block;
+  flex-shrink: 0;
+  z-index: 1;
+}
+.groupButton {
+  cursor: pointer;
+  border: 0;
+  padding: 19.9px var(--padding-xl) 19.5px;
+  background-color: var(--color-darkviolet-200);
+  align-self: stretch;
+  box-shadow: 0 4px 26px rgba(0, 0, 0, 0.25);
+  border-radius: var(--br-13xl);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.groupButton:hover {
+  background-color: var(--color-blueviolet);
+}
+.seIlTuo {
+  align-self: stretch;
+  position: relative;
+}
+.puoi {
+  white-space: pre-wrap;
+}
+.accedereQui {
+  font-weight: 600;
+  color: var(--color-darkviolet-100);
+}
+.puoiAccedereQuiContainer {
+  align-self: stretch;
+  height: 35.3px;
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.seIlTuoLocaleGiRegistrParent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 19.2px;
+  max-width: 100%;
+}
+.cosaRendiNightbles {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 2.6px 0 var(--padding-6xs);
+  box-sizing: border-box;
+  max-width: 100%;
+  flex-shrink: 0;
+}
+.frameParent3,
+.registraIlTuoLocaleParent {
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.frameParent3 {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-end;
+  gap: 36.7px;
+  max-width: 100%;
+}
+.registraIlTuoLocaleParent {
+  width: 656px;
+  gap: var(--gap-36xl);
+}
+.frameWrapper,
+.nNightblesParent,
+.registraIlTuoLocaleParent {
+  display: flex;
+  align-items: flex-start;
+  max-width: 100%;
+}
+.frameWrapper {
+  align-self: stretch;
+  flex-direction: row;
+  justify-content: flex-end;
+  font-size: var(--font-size-base);
+  font-family: var(--font-poppins);
+}
+.nNightblesParent {
+  width: 842px;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: var(--gap-27xl);
+  min-width: 842px;
+}
+.cosaRendeNightbles {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+  font-size: var(--font-size-45xl);
+  font-weight: 900;
+  font-family: inherit;
+}
+.conferenceIcon {
+  height: 100px;
+  width: 100px;
+  position: relative;
+  object-fit: cover;
+}
+.aumentaLaTuaVisibilitInc {
+  margin: 0;
+  width: 500px;
+  position: relative;
+  font-size: inherit;
+  font-weight: 500;
+  font-family: inherit;
+  display: inline-block;
+  max-height: 72px;
+  word-break: break-word;
+}
+.aumentaLaTuaVisibilitIncWrapper,
+.conferenceParent,
+.frameWrapper1 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.aumentaLaTuaVisibilitIncWrapper {
+  flex-direction: column;
+  padding: var(--padding-sm) 0 0;
+  box-sizing: border-box;
+}
+.conferenceParent,
+.frameWrapper1 {
+  flex-direction: row;
+}
+.conferenceParent {
+  gap: var(--gap-smi);
+}
+.frameWrapper1 {
+  align-self: stretch;
+}
+.eliminaLaNecessit {
+  margin: 0;
+  flex: 1;
+  position: relative;
+  font-size: inherit;
+  font-weight: 500;
+  font-family: inherit;
+  display: inline-block;
+  min-width: 297px;
+  max-width: 100%;
+}
+.timeIcon {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  object-fit: cover;
+}
+.timeWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-9xs) 0 0;
+}
+.eliminaLaNecessitDiEffettParent,
+.frameParent4 {
+  display: flex;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.eliminaLaNecessitDiEffettParent {
+  width: 570px;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--gap-smi);
+  text-align: right;
+}
+.frameParent4 {
+  align-self: stretch;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 0 0 var(--padding-6xs);
+  box-sizing: border-box;
+  gap: var(--gap-19xl);
+}
+.last24Hours {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  object-fit: cover;
+}
+.last24HoursWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-3xl) 0 0;
+}
+.iClientiPossono {
+  margin: 0;
+  height: 144px;
+  flex: 1;
+  position: relative;
+  font-size: inherit;
+  font-weight: 500;
+  font-family: inherit;
+  display: inline-block;
+  min-width: 325px;
+  max-width: 100%;
+}
+.clientsCanBookLabel,
+.frameParent5 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.frameParent5 {
+  width: 613px;
+  flex-direction: row;
+  gap: var(--gap-smi);
+}
+.clientsCanBookLabel {
+  align-self: stretch;
+  flex-direction: column;
+  gap: var(--gap-29xl);
+}
+.lastHoursLabel,
+.registrazioneLocale {
+  display: flex;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+.lastHoursLabel {
+  width: 740px;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 108px 0 0;
+  min-width: 740px;
+  max-width: 100%;
+  font-size: var(--font-size-5xl);
+  font-family: var(--font-poppins);
+}
+.registrazioneLocale {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-gray-500);
+  overflow: hidden;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: var(--padding-22xl) 59px 547.5px var(--padding-21xl);
+  line-height: normal;
+  letter-spacing: normal;
+  gap: var(--gap-xl);
+  text-align: left;
+  font-size: var(--font-size-17xl);
+  color: var(--color-white);
+  font-family: var(--font-lustria);
+}
+@media screen and (max-width: 1700px) {
+  .lastHoursLabel,
+  .nNightblesParent {
+    flex: 1;
+  }
+  .registrazioneLocale {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 1325px) {
+  .nNightblesParent {
+    min-width: 100%;
+  }
+  .registrazioneLocale {
+    padding-right: var(--padding-10xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 900px) {
+  .nNightblesContainer {
+    font-size: var(--font-size-10xl);
+  }
+  .registraIlTuo {
+    font-size: var(--font-size-5xl);
+  }
+  .frameContainer,
+  .frameGroup,
+  .frameParent2 {
+    flex-wrap: wrap;
+  }
+  .frameParent3 {
+    gap: var(--gap-lg);
+  }
+  .registraIlTuoLocaleParent {
+    gap: var(--gap-8xl);
+  }
+  .cosaRendeNightbles {
+    font-size: var(--font-size-32xl);
+  }
+  .conferenceParent,
+  .eliminaLaNecessitDiEffettParent {
+    flex-wrap: wrap;
+  }
+  .frameParent4 {
+    gap: var(--gap-lgi);
+  }
+  .frameParent5 {
+    flex-wrap: wrap;
+  }
+  .clientsCanBookLabel {
+    gap: var(--gap-5xl);
+  }
+  .lastHoursLabel {
+    padding-top: 70px;
+    box-sizing: border-box;
+    min-width: 100%;
+  }
+}
+@media screen and (max-width: 450px) {
+  .nNightblesContainer {
+    font-size: var(--font-size-3xl);
+  }
+  .registraIlTuo {
+    font-size: var(--font-size-lg);
+  }
+  .nNightblesParent {
+    gap: var(--gap-4xl);
+  }
+  .cosaRendeNightbles {
+    font-size: var(--font-size-19xl);
+  }
+  .aumentaLaTuaVisibilitInc,
+  .eliminaLaNecessit,
+  .iClientiPossono {
+    font-size: var(--font-size-lgi);
+  }
+  .lastHoursLabel {
+    padding-top: var(--padding-26xl);
+    box-sizing: border-box;
+  }
+}
