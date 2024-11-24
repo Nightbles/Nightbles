@@ -8,6 +8,7 @@
 }
 .ilTuoLocale {
   align-self: stretch;
+  overflow-x: hidden;
   position: relative;
   line-height: 9px;
   display: inline-block;
@@ -1200,6 +1201,7 @@
 .locale {
   display: flex;
   align-items: flex-start;
+  overflow-x: hidden;
   justify-content: flex-start;
 }
 .footerInner2 {
