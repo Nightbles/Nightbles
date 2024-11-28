@@ -1,35 +1,109 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect } from "react";
+import {
+  Routes,
+  Route,
+  useNavigationType,
+  useLocation,
+} from "react-router-dom";
+import Index1 from "./pages/Index1";
+import ProfiloUtente from "./pages/ProfiloUtente";
+import LoginUtente from "./pages/LoginUtente";
+import RegistrazioneUtente from "./pages/RegistrazioneUtente";
+import RegistrazioneLocale from "./pages/RegistrazioneLocale";
+import RegistrazioneLocale1 from "./pages/RegistrazioneLocale1";
+import Prenotazione from "./pages/Prenotazione";
+import Gestore from "./pages/Gestore";
+import Locale from "./pages/Locale";
+import PrenotazLocale from "./pages/PrenotazLocale";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const action = useNavigationType();
+  const location = useLocation();
+  const pathname = location.pathname;
+
+  useEffect(() => {
+    if (action !== "POP") {
+      window.scrollTo(0, 0);
+    }
+  }, [action, pathname]);
+
+  useEffect(() => {
+    let title = "";
+    let metaDescription = "";
+
+    switch (pathname) {
+      case "/":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/profilo-utente":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/login-utente":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/registrazione-utente":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/registrazione-locale":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/registrazione-locale-2":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/prenotazione":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/gestore":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/locale/:urlId":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/prenotaz-locale/:urlId":
+        title = "";
+        metaDescription = "";
+        break;
+    }
+
+    if (title) {
+      document.title = title;
+    }
+
+    if (metaDescription) {
+      const metaDescriptionTag = document.querySelector(
+        'head > meta[name="description"]'
+      );
+      if (metaDescriptionTag) {
+        metaDescriptionTag.content = metaDescription;
+      }
+    }
+  }, [pathname]);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Routes>
+      <Route path="/" element={<Index1 />} />
+      <Route path="/profilo-utente" element={<ProfiloUtente />} />
+      <Route path="/login-utente" element={<LoginUtente />} />
+      <Route path="/registrazione-utente" element={<RegistrazioneUtente />} />
+      <Route path="/registrazione-locale" element={<RegistrazioneLocale />} />
+      <Route
+        path="/registrazione-locale-2"
+        element={<RegistrazioneLocale1 />}
+      />
+      <Route path="/prenotazione" element={<Prenotazione />} />
+      <Route path="/gestore" element={<Gestore />} />
+      <Route path="/locale/:urlId" element={<Locale />} />
+      <Route path="/prenotaz-locale/:urlId" element={<PrenotazLocale />} />
+    </Routes>
+  );
 }
-
-export default App
+export default App;
