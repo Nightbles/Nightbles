@@ -7,7 +7,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
         // cf. https://rollupjs.org/configuration-options/#external
-        external: ['@tomtom-international']
+        external: ['@tomtom-international/web-sdk-maps']
     }
 }
 })
